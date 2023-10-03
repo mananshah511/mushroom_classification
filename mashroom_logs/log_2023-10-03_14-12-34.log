@@ -1,0 +1,3 @@
+[2023-10-03 14:12:35,151]root - INFO - get training pipeline config function started
+[2023-10-03 14:12:35,151]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-03 14:12:35,151]root - INFO - get data ingestion config function started
