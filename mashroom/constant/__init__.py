@@ -8,6 +8,30 @@ CONFIG_FILE_PATH = os.path.join(ROOT_DIR,CONFIF_DIR,CONFIG_FILE_NAME)
 
 CURRENT_TIME_STAMP = f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
 
+COLUMNS = ['target',
+         'cap-shape',
+           'cap-color',
+     'cap-surface',
+      'bruises',
+      'odor',
+      'gill-attachment',
+      'gill-spacing',
+      'gill-size',
+      'gill-color',
+     'stalk-shape',
+     'stalk-root',
+     'stalk-surface-above-ring',
+     'stalk-surface-below-ring',
+     'stalk-color-above-ring',
+     'stalk-color-below-ring',
+     'veil-type',
+     'veil-color',
+     'ring-number',
+     'ring-type',
+     'spore-print-color',
+     'population',
+     'habitat'   ]
+
 #training pipeline related variables
 
 TRAINING_PIPELINE_CONFIG_KEY = "training_pipeline_config"

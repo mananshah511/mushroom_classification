@@ -1,0 +1,38 @@
+[2023-10-03 15:20:21,389]root - INFO - get training pipeline config function started
+[2023-10-03 15:20:21,389]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-03 15:20:21,389]root - INFO - get data ingestion config function started
+[2023-10-03 15:20:21,389]root - INFO - data ingestion config : DataIngestionConfig(dataset_download_url='https://archive.ics.uci.edu/static/public/73/mushroom.zip', raw_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-03-15-20-17\\raw_data', zip_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-03-15-20-17\\zip_data', ingested_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-03-15-20-17\\ingested_data\\train', ingested_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-03-15-20-17\\ingested_data\\test')
+[2023-10-03 15:20:21,389]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-03 15:20:21,389]root - INFO - intitate data ingestion function started
+[2023-10-03 15:20:21,389]root - INFO - download mashroom data function started
+[2023-10-03 15:20:21,389]root - INFO - downlaodind data from https://archive.ics.uci.edu/static/public/73/mushroom.zip in the D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-03-15-20-17\zip_data folder
+[2023-10-03 15:20:21,389]root - INFO - -----data download started-----
+[2023-10-03 15:20:23,095]root - INFO - -----data download completed-----
+[2023-10-03 15:20:23,095]root - INFO - get extracted data function started
+[2023-10-03 15:20:23,095]root - INFO - extracting data from D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-03-15-20-17\zip_data\mushroom.zip into D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-03-15-20-17\raw_data folder
+[2023-10-03 15:20:23,142]root - INFO - get train test split function started
+[2023-10-03 15:20:23,142]root - INFO - data file name : agaricus-lepiota.data
+[2023-10-03 15:20:23,142]root - INFO - -----data reading started-----
+[2023-10-03 15:20:23,252]root - INFO -      target cap-shape cap-color cap-surface bruises odor  ... veil-color ring-number ring-type spore-print-color population habitat
+0         p         x         s           n       t    p  ...          w           o         p                 k          s       u
+1         e         x         s           y       t    a  ...          w           o         p                 n          n       g
+2         e         b         s           w       t    l  ...          w           o         p                 n          n       m
+3         p         x         y           w       t    p  ...          w           o         p                 k          s       u
+4         e         x         s           g       f    n  ...          w           o         e                 n          a       g
+...     ...       ...       ...         ...     ...  ...  ...        ...         ...       ...               ...        ...     ...
+8119      e         k         s           n       f    n  ...          o           o         p                 b          c       l
+8120      e         x         s           n       f    n  ...          n           o         p                 b          v       l
+8121      e         f         s           n       f    n  ...          o           o         p                 b          c       l
+8122      p         k         y           n       f    y  ...          w           o         e                 w          v       l
+8123      e         x         s           n       f    n  ...          o           o         p                 o          c       l
+
+[8124 rows x 23 columns]
+[2023-10-03 15:20:23,252]root - INFO - -----data reading completed-----
+[2023-10-03 15:20:23,252]root - INFO - -----splitting data started-----
+[2023-10-03 15:20:23,252]root - INFO - -----splitting data completed-----
+[2023-10-03 15:20:23,252]root - INFO - combining input and output features
+[2023-10-03 15:20:23,267]root - INFO - saving train data as csv
+[2023-10-03 15:20:23,299]root - INFO - saving test data as csv
+[2023-10-03 15:20:23,345]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
