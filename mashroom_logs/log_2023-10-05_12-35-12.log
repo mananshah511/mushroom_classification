@@ -1,0 +1,67 @@
+[2023-10-05 12:35:18,985]root - INFO - get training pipeline config function started
+[2023-10-05 12:35:18,985]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-05 12:35:18,988]root - INFO - get data ingestion config function started
+[2023-10-05 12:35:18,988]root - INFO - data ingestion config : DataIngestionConfig(dataset_download_url='https://archive.ics.uci.edu/static/public/73/mushroom.zip', raw_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-35-12\\raw_data', zip_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-35-12\\zip_data', ingested_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-35-12\\ingested_data\\train', ingested_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-35-12\\ingested_data\\test')
+[2023-10-05 12:35:18,991]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-05 12:35:18,992]root - INFO - intitate data ingestion function started
+[2023-10-05 12:35:18,992]root - INFO - download mashroom data function started
+[2023-10-05 12:35:18,992]root - INFO - downlaodind data from https://archive.ics.uci.edu/static/public/73/mushroom.zip in the D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\zip_data folder
+[2023-10-05 12:35:18,997]root - INFO - -----data download started-----
+[2023-10-05 12:35:21,024]root - INFO - -----data download completed-----
+[2023-10-05 12:35:21,024]root - INFO - get extracted data function started
+[2023-10-05 12:35:21,024]root - INFO - extracting data from D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\zip_data\mushroom.zip into D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\raw_data folder
+[2023-10-05 12:35:21,086]root - INFO - get train test split function started
+[2023-10-05 12:35:21,086]root - INFO - data file name : agaricus-lepiota.data
+[2023-10-05 12:35:21,086]root - INFO - -----data reading started-----
+[2023-10-05 12:35:21,196]root - INFO - -----data reading completed-----
+[2023-10-05 12:35:21,196]root - INFO - -----splitting data started-----
+[2023-10-05 12:35:21,211]root - INFO - -----splitting data completed-----
+[2023-10-05 12:35:21,211]root - INFO - combining input and output features
+[2023-10-05 12:35:21,211]root - INFO - saving train data as csv
+[2023-10-05 12:35:21,258]root - INFO - saving test data as csv
+[2023-10-05 12:35:21,305]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:35:21,305]root - INFO - get data validation config function started
+[2023-10-05 12:35:21,305]root - INFO - data validation config : DataValidationConfig(schema_file_dir='D:\\projects\\mushroom_classification\\config\\schema.yaml', report_page_file_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_validation\\2023-10-05-12-35-12', report_name='report.html')
+[2023-10-05 12:35:21,305]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:35:21,305]root - INFO - get column count validation function started
+[2023-10-05 12:35:21,305]root - INFO - get train test dataframe function started
+[2023-10-05 12:35:21,305]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:35:21,352]root - INFO - train file read successfull
+[2023-10-05 12:35:21,352]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:35:21,414]root - INFO - test file read successfull
+[2023-10-05 12:35:21,414]root - INFO - column count in schema file is : 23
+[2023-10-05 12:35:21,414]root - INFO - column count in train file is : 23
+[2023-10-05 12:35:21,414]root - INFO - column count in test file is : 23
+[2023-10-05 12:35:21,414]root - INFO - column count in train dataframe is okky
+[2023-10-05 12:35:21,414]root - INFO - column count in test dataframe is okky
+[2023-10-05 12:35:21,414]root - INFO - get column name validation function started
+[2023-10-05 12:35:21,414]root - INFO - get train test dataframe function started
+[2023-10-05 12:35:21,414]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:35:21,446]root - INFO - train file read successfull
+[2023-10-05 12:35:21,446]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:35:21,477]root - INFO - test file read successfull
+[2023-10-05 12:35:21,477]root - INFO - schema column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:35:21,477]root - INFO - train dataframe column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:35:21,493]root - INFO - test dataframe column anmes are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:35:21,493]root - INFO - train dataframe column names are correct
+[2023-10-05 12:35:21,493]root - INFO - test dataframe column names are correct
+[2023-10-05 12:35:21,493]root - INFO - get column data type validation function started
+[2023-10-05 12:35:21,493]root - INFO - get train test dataframe function started
+[2023-10-05 12:35:21,493]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:35:21,526]root - INFO - train file read successfull
+[2023-10-05 12:35:21,526]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:35:21,557]root - INFO - test file read successfull
+[2023-10-05 12:35:21,557]root - INFO - get and save data drift report function started
+[2023-10-05 12:35:21,572]root - INFO - get train test dataframe function started
+[2023-10-05 12:35:21,572]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:35:21,588]root - INFO - train file read successfull
+[2023-10-05 12:35:21,588]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-35-12\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:35:21,635]root - INFO - test file read successfull
+[2023-10-05 12:35:31,573]root - INFO - report saved succesfully
+[2023-10-05 12:35:31,573]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+

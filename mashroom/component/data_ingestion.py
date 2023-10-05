@@ -65,7 +65,7 @@ class DataIngestion:
 
             logging.info(f"-----data reading started-----")
             mashroom_df = pd.read_csv(file_path,sep=',',names=COLUMNS)
-            logging.info(f"{mashroom_df}")
+            #logging.info(f"{mashroom_df}")
             logging.info(f"-----data reading completed-----")
 
             logging.info(f"-----splitting data started-----")

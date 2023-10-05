@@ -1,0 +1,51 @@
+columns:
+  cap-shape: object
+  cap-color: object
+  cap-surface: object
+  bruises: object
+  odor: object
+  gill-attachment: object
+  gill-spacing: object
+  gill-size: object
+  gill-color: object
+  stalk-shape: object
+  stalk-root: object
+  stalk-surface-above-ring: object
+  stalk-surface-below-ring: object
+  stalk-color-above-ring: object
+  stalk-color-below-ring: object
+  veil-type: object
+  veil-color: object
+  ring-number: object
+  ring-type: object
+  spore-print-color: object
+  population: object
+  habitat: object
+  target: object
+
+categorical_columns:
+  - cap-shape
+  - cap-color
+  - cap-surface
+  - bruises
+  - odor
+  - gill-attachment
+  - gill-spacing
+  - gill-size
+  - gill-color
+  - stalk-shape
+  - stalk-root
+  - stalk-surface-above-ring
+  - stalk-surface-below-ring
+  - stalk-color-above-ring
+  - stalk-color-below-ring
+  - veil-type
+  - veil-color
+  - ring-number
+  - ring-type
+  - spore-print-color
+  - population
+  - habitat
+  - target
+
+target_column: target

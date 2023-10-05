@@ -1,0 +1,32 @@
+[2023-10-05 12:31:18,325]root - INFO - get training pipeline config function started
+[2023-10-05 12:31:18,325]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-05 12:31:18,325]root - INFO - get data ingestion config function started
+[2023-10-05 12:31:18,325]root - INFO - data ingestion config : DataIngestionConfig(dataset_download_url='https://archive.ics.uci.edu/static/public/73/mushroom.zip', raw_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-30-32\\raw_data', zip_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-30-32\\zip_data', ingested_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-30-32\\ingested_data\\train', ingested_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-30-32\\ingested_data\\test')
+[2023-10-05 12:31:18,325]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-05 12:31:18,325]root - INFO - intitate data ingestion function started
+[2023-10-05 12:31:18,325]root - INFO - download mashroom data function started
+[2023-10-05 12:31:18,325]root - INFO - downlaodind data from https://archive.ics.uci.edu/static/public/73/mushroom.zip in the D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-30-32\zip_data folder
+[2023-10-05 12:31:18,333]root - INFO - -----data download started-----
+[2023-10-05 12:31:20,244]root - INFO - -----data download completed-----
+[2023-10-05 12:31:20,244]root - INFO - get extracted data function started
+[2023-10-05 12:31:20,244]root - INFO - extracting data from D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-30-32\zip_data\mushroom.zip into D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-30-32\raw_data folder
+[2023-10-05 12:31:20,275]root - INFO - get train test split function started
+[2023-10-05 12:31:20,275]root - INFO - data file name : agaricus-lepiota.data
+[2023-10-05 12:31:20,275]root - INFO - -----data reading started-----
+[2023-10-05 12:31:20,369]root - INFO - -----data reading completed-----
+[2023-10-05 12:31:20,369]root - INFO - -----splitting data started-----
+[2023-10-05 12:31:20,385]root - INFO - -----splitting data completed-----
+[2023-10-05 12:31:20,385]root - INFO - combining input and output features
+[2023-10-05 12:31:20,385]root - INFO - saving train data as csv
+[2023-10-05 12:31:20,463]root - INFO - saving test data as csv
+[2023-10-05 12:31:20,496]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:31:20,496]root - INFO - get data validation config function started
+[2023-10-05 12:31:20,496]root - INFO - data validation config : DataValidationConfig(schema_file_dir='D:\\projects\\mushroom_classification\\config\\schema.yaml', report_page_file_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_validation\\2023-10-05-12-30-32', report_name='report.html')
+[2023-10-05 12:31:20,496]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:31:20,496]root - INFO - get column count validation function started
+[2023-10-05 12:31:20,527]root - INFO - get train test dataframe function started
+[2023-10-05 12:31:20,527]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-30-32\ingested_data\train\agaricus-lepiota.csv

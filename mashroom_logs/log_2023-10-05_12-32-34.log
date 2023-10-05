@@ -1,0 +1,51 @@
+[2023-10-05 12:32:43,027]root - INFO - get training pipeline config function started
+[2023-10-05 12:32:43,028]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-05 12:32:43,028]root - INFO - get data ingestion config function started
+[2023-10-05 12:32:43,029]root - INFO - data ingestion config : DataIngestionConfig(dataset_download_url='https://archive.ics.uci.edu/static/public/73/mushroom.zip', raw_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-32-34\\raw_data', zip_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-32-34\\zip_data', ingested_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-32-34\\ingested_data\\train', ingested_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-05-12-32-34\\ingested_data\\test')
+[2023-10-05 12:32:43,029]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-05 12:32:43,030]root - INFO - intitate data ingestion function started
+[2023-10-05 12:32:43,030]root - INFO - download mashroom data function started
+[2023-10-05 12:32:43,030]root - INFO - downlaodind data from https://archive.ics.uci.edu/static/public/73/mushroom.zip in the D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\zip_data folder
+[2023-10-05 12:32:43,032]root - INFO - -----data download started-----
+[2023-10-05 12:32:45,204]root - INFO - -----data download completed-----
+[2023-10-05 12:32:45,204]root - INFO - get extracted data function started
+[2023-10-05 12:32:45,204]root - INFO - extracting data from D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\zip_data\mushroom.zip into D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\raw_data folder
+[2023-10-05 12:32:45,266]root - INFO - get train test split function started
+[2023-10-05 12:32:45,266]root - INFO - data file name : agaricus-lepiota.data
+[2023-10-05 12:32:45,266]root - INFO - -----data reading started-----
+[2023-10-05 12:32:45,438]root - INFO - -----data reading completed-----
+[2023-10-05 12:32:45,438]root - INFO - -----splitting data started-----
+[2023-10-05 12:32:45,454]root - INFO - -----splitting data completed-----
+[2023-10-05 12:32:45,454]root - INFO - combining input and output features
+[2023-10-05 12:32:45,469]root - INFO - saving train data as csv
+[2023-10-05 12:32:45,516]root - INFO - saving test data as csv
+[2023-10-05 12:32:45,563]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:32:45,563]root - INFO - get data validation config function started
+[2023-10-05 12:32:45,563]root - INFO - data validation config : DataValidationConfig(schema_file_dir='D:\\projects\\mushroom_classification\\config\\schema.yaml', report_page_file_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_validation\\2023-10-05-12-32-34', report_name='report.html')
+[2023-10-05 12:32:45,563]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-05 12:32:45,563]root - INFO - get column count validation function started
+[2023-10-05 12:32:45,579]root - INFO - get train test dataframe function started
+[2023-10-05 12:32:45,579]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:32:45,641]root - INFO - train file read successfull
+[2023-10-05 12:32:45,641]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:32:45,690]root - INFO - test file read successfull
+[2023-10-05 12:32:45,690]root - INFO - column count in schema file is : 23
+[2023-10-05 12:32:45,690]root - INFO - column count in train file is : 23
+[2023-10-05 12:32:45,690]root - INFO - column count in test file is : 23
+[2023-10-05 12:32:45,690]root - INFO - column count in train dataframe is okky
+[2023-10-05 12:32:45,690]root - INFO - column count in test dataframe is okky
+[2023-10-05 12:32:45,690]root - INFO - get column name validation function started
+[2023-10-05 12:32:45,690]root - INFO - get train test dataframe function started
+[2023-10-05 12:32:45,690]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\ingested_data\train\agaricus-lepiota.csv
+[2023-10-05 12:32:45,737]root - INFO - train file read successfull
+[2023-10-05 12:32:45,737]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-05-12-32-34\ingested_data\test\agaricus-lepiota.csv
+[2023-10-05 12:32:45,768]root - INFO - test file read successfull
+[2023-10-05 12:32:45,768]root - INFO - schema column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:32:45,768]root - INFO - train dataframe column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:32:45,768]root - INFO - test dataframe column anmes are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-05 12:32:45,768]root - INFO - train dataframe column names are correct
+[2023-10-05 12:32:45,768]root - INFO - test dataframe column names are correct
