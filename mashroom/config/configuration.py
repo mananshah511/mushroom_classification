@@ -1,7 +1,7 @@
 import os,sys
 from mashroom.exception import MashroomException
 from mashroom.logger import logging
-from mashroom.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig,DataValidationConfig
+from mashroom.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig,DataValidationConfig,DataTransformConfig
 from mashroom.util.util import read_yaml
 from mashroom.constant import *
 
@@ -68,6 +68,32 @@ class Configuration:
             logging.info(f"data validation config : {data_validation_config}")
 
             return data_validation_config
+        except Exception as e:
+            raise MashroomException(sys,e) from e
+        
+    def get_data_transform_config(self)->DataTransformConfig:
+        try:
+            logging.info("get data transform config function started")
+
+            artifact_dir = self.training_pipeline_config.artifact_dir
+
+            data_transform_config = self.config_info[DATA_TRANSFORM_CONFIG_KEY]
+
+            data_transform_artifact_dir = os.path.join(artifact_dir,DATA_TRANSFORM_DIR,self.current_time_stamp)
+
+            train_transform_dir = os.path.join(data_transform_artifact_dir,data_transform_config[DATA_TRANSFORM_TRAIN_DIR_KEY])
+
+            test_transform_dir = os.path.join(data_transform_artifact_dir,data_transform_config[DATA_TRANSFORM_TEST_DIR_KEY])
+
+            preprocessed_dir = os.path.join(data_transform_artifact_dir,data_transform_config[DATA_TRANSFORM_PREPROCESSED_OBJECT_DIR_KEY],
+                                            data_transform_config[DATA_TRANSFORM_PREPROCESSED_OBJECT_FILE_NAME_KEY])
+            
+            data_transform_config = DataTransformConfig(transform_train_dir=train_transform_dir,
+                                                        transform_test_dir=test_transform_dir,
+                                                        preprocessed_file_path=preprocessed_dir)
+            logging.info(f"data transform config : {data_transform_config}")
+
+            return data_transform_config
         except Exception as e:
             raise MashroomException(sys,e) from e
         
