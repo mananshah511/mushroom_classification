@@ -1,6 +1,0 @@
-[2023-10-05 12:49:28,090]root - INFO - get training pipeline config function started
-[2023-10-05 12:49:28,090]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
-[2023-10-05 12:49:28,109]root - INFO - get training pipeline config function started
-[2023-10-05 12:49:28,110]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
-[2023-10-05 12:49:28,110]root - INFO - get data transform config function started
-[2023-10-05 12:49:28,110]root - INFO - data transform config : DataTransformConfig(transform_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-05-12-49-17\\train', transform_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-05-12-49-17\\test', preprocessed_file_path='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-05-12-49-17\\preprocessed\\preprocessed.pkl')
