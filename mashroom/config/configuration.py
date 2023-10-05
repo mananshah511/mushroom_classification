@@ -1,7 +1,7 @@
 import os,sys
 from mashroom.exception import MashroomException
 from mashroom.logger import logging
-from mashroom.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig,DataValidationConfig,DataTransformConfig
+from mashroom.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig,DataValidationConfig,DataTransformConfig,ModelTrainerConfig
 from mashroom.util.util import read_yaml
 from mashroom.constant import *
 
@@ -94,6 +94,34 @@ class Configuration:
             logging.info(f"data transform config : {data_transform_config}")
 
             return data_transform_config
+        except Exception as e:
+            raise MashroomException(sys,e) from e
+        
+    def get_model_trainer_config(self)->ModelTrainerConfig:
+        try:
+            logging.info(f"get model trainer function started")
+
+            artifact_dir = self.training_pipeline_config.artifact_dir
+
+            model_trainer_config = self.config_info[MODEL_TRAINER_CONFIG_KEY]
+
+            model_trainer_artifact_dir = os.path.join(ROOT_DIR,MODEL_TRAINER_DIR,self.current_time_stamp)
+
+            moodel_config_dir = os.path.join(ROOT_DIR,model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_DIR_KEY],
+                                             model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY])
+            
+            model_file_path = os.path.join(model_trainer_artifact_dir,model_trainer_config[MODEL_TRAINER_MODEL_FILE_NAME_KEY])
+
+            base_accuracy = model_trainer_config[MODEL_TRAINER_BASE_ACCURACY_KEY]
+
+            model_trainer_config = ModelTrainerConfig(base_accuracy=base_accuracy,
+                                                      trained_model_file_path=model_file_path,
+                                                      model_config_file_path=moodel_config_dir)
+            logging.info(f"mode trainer config : {model_trainer_config}")
+
+            return model_trainer_config
+
+            logging.info(f"")
         except Exception as e:
             raise MashroomException(sys,e) from e
         

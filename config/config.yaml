@@ -20,3 +20,9 @@ data_transform_config:
   test_dir : test
   preprocessed_object_dir: preprocessed
   preprocessed_object_file_name: preprocessed.pkl
+
+model_trainer_config:
+  moddel_file_name : model.pkl
+  base_acuracy : 0.9
+  model_config_dir : config
+  model_config_file_name : model.yaml
