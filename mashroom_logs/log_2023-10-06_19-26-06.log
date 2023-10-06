@@ -1,0 +1,137 @@
+[2023-10-06 19:26:12,483]root - INFO - get training pipeline config function started
+[2023-10-06 19:26:12,483]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-06 19:26:12,483]root - INFO - get data ingestion config function started
+[2023-10-06 19:26:12,483]root - INFO - data ingestion config : DataIngestionConfig(dataset_download_url='https://archive.ics.uci.edu/static/public/73/mushroom.zip', raw_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-06-19-26-06\\raw_data', zip_data_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-06-19-26-06\\zip_data', ingested_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-06-19-26-06\\ingested_data\\train', ingested_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_ingestion\\2023-10-06-19-26-06\\ingested_data\\test')
+[2023-10-06 19:26:12,483]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-06 19:26:12,483]root - INFO - intitate data ingestion function started
+[2023-10-06 19:26:12,483]root - INFO - download mashroom data function started
+[2023-10-06 19:26:12,483]root - INFO - downlaodind data from https://archive.ics.uci.edu/static/public/73/mushroom.zip in the D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\zip_data folder
+[2023-10-06 19:26:12,498]root - INFO - -----data download started-----
+[2023-10-06 19:26:14,189]root - INFO - -----data download completed-----
+[2023-10-06 19:26:14,189]root - INFO - get extracted data function started
+[2023-10-06 19:26:14,189]root - INFO - extracting data from D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\zip_data\mushroom.zip into D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\raw_data folder
+[2023-10-06 19:26:14,264]root - INFO - get train test split function started
+[2023-10-06 19:26:14,264]root - INFO - data file name : agaricus-lepiota.data
+[2023-10-06 19:26:14,265]root - INFO - -----data reading started-----
+[2023-10-06 19:26:14,353]root - INFO - -----data reading completed-----
+[2023-10-06 19:26:14,353]root - INFO - -----splitting data started-----
+[2023-10-06 19:26:14,365]root - INFO - -----splitting data completed-----
+[2023-10-06 19:26:14,365]root - INFO - combining input and output features
+[2023-10-06 19:26:14,373]root - INFO - saving train data as csv
+[2023-10-06 19:26:14,419]root - INFO - saving test data as csv
+[2023-10-06 19:26:14,487]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-06 19:26:14,487]root - INFO - get data validation config function started
+[2023-10-06 19:26:14,487]root - INFO - data validation config : DataValidationConfig(schema_file_dir='D:\\projects\\mushroom_classification\\config\\schema.yaml', report_page_file_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_validation\\2023-10-06-19-26-06', report_name='report.html')
+[2023-10-06 19:26:14,487]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-06 19:26:14,487]root - INFO - get column count validation function started
+[2023-10-06 19:26:14,487]root - INFO - get train test dataframe function started
+[2023-10-06 19:26:14,487]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\train\agaricus-lepiota.csv
+[2023-10-06 19:26:14,534]root - INFO - train file read successfull
+[2023-10-06 19:26:14,534]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\test\agaricus-lepiota.csv
+[2023-10-06 19:26:14,580]root - INFO - test file read successfull
+[2023-10-06 19:26:14,580]root - INFO - column count in schema file is : 23
+[2023-10-06 19:26:14,580]root - INFO - column count in train file is : 23
+[2023-10-06 19:26:14,580]root - INFO - column count in test file is : 23
+[2023-10-06 19:26:14,580]root - INFO - column count in train dataframe is okky
+[2023-10-06 19:26:14,580]root - INFO - column count in test dataframe is okky
+[2023-10-06 19:26:14,580]root - INFO - get column name validation function started
+[2023-10-06 19:26:14,596]root - INFO - get train test dataframe function started
+[2023-10-06 19:26:14,596]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\train\agaricus-lepiota.csv
+[2023-10-06 19:26:14,627]root - INFO - train file read successfull
+[2023-10-06 19:26:14,627]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\test\agaricus-lepiota.csv
+[2023-10-06 19:26:14,659]root - INFO - test file read successfull
+[2023-10-06 19:26:14,659]root - INFO - schema column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-06 19:26:14,659]root - INFO - train dataframe column names are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-06 19:26:14,659]root - INFO - test dataframe column anmes are : ['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor', 'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root', 'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat', 'target']
+[2023-10-06 19:26:14,659]root - INFO - train dataframe column names are correct
+[2023-10-06 19:26:14,659]root - INFO - test dataframe column names are correct
+[2023-10-06 19:26:14,659]root - INFO - get column data type validation function started
+[2023-10-06 19:26:14,674]root - INFO - get train test dataframe function started
+[2023-10-06 19:26:14,674]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\train\agaricus-lepiota.csv
+[2023-10-06 19:26:14,706]root - INFO - train file read successfull
+[2023-10-06 19:26:14,706]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\test\agaricus-lepiota.csv
+[2023-10-06 19:26:14,737]root - INFO - test file read successfull
+[2023-10-06 19:26:14,737]root - INFO - get and save data drift report function started
+[2023-10-06 19:26:14,737]root - INFO - get train test dataframe function started
+[2023-10-06 19:26:14,737]root - INFO - reading train data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\train\agaricus-lepiota.csv
+[2023-10-06 19:26:14,768]root - INFO - train file read successfull
+[2023-10-06 19:26:14,768]root - INFO - rading test data from : D:\projects\mushroom_classification\mashroom\artifact\data_ingestion\2023-10-06-19-26-06\ingested_data\test\agaricus-lepiota.csv
+[2023-10-06 19:26:14,799]root - INFO - test file read successfull
+[2023-10-06 19:26:17,365]root - INFO - report saved succesfully
+[2023-10-06 19:26:17,366]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-06 19:26:17,367]root - INFO - get data transform config function started
+[2023-10-06 19:26:17,367]root - INFO - data transform config : DataTransformConfig(transform_train_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-06-19-26-06\\train', transform_test_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-06-19-26-06\\test', preprocessed_file_path='D:\\projects\\mushroom_classification\\mashroom\\artifact\\data_transform\\2023-10-06-19-26-06\\preprocessed\\preprocessed.pkl')
+[2023-10-06 19:26:17,367]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-06 19:26:17,367]root - INFO - intiate data transform function started
+[2023-10-06 19:26:17,367]root - INFO - get preprocessing object function staretd
+[2023-10-06 19:26:17,367]root - INFO - -----pipeline esamble started-----
+[2023-10-06 19:26:17,368]root - INFO - -----pipeline esamble completed-----
+[2023-10-06 19:26:17,368]root - INFO - get perfrom preprocessing function started
+[2023-10-06 19:26:17,370]root - INFO - -----reading train data started-----
+[2023-10-06 19:26:17,401]root - INFO - ------reading train data completed-----
+[2023-10-06 19:26:17,401]root - INFO - dropping target column from dataframe
+[2023-10-06 19:26:17,417]root - INFO - columns names after dropping target column : Index(['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor',
+       'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color',
+       'stalk-shape', 'stalk-root', 'stalk-surface-above-ring',
+       'stalk-surface-below-ring', 'stalk-color-above-ring',
+       'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number',
+       'ring-type', 'spore-print-color', 'population', 'habitat'],
+      dtype='object')
+[2023-10-06 19:26:17,417]root - INFO - -----preprocessing on train data started-----
+[2023-10-06 19:26:17,510]root - INFO - -----preprocessing on train data completed-----
+[2023-10-06 19:26:17,510]root - INFO - one hot encoding on target data
+[2023-10-06 19:26:17,510]root - INFO - combining input and output dataframes
+[2023-10-06 19:26:17,510]root - INFO - get perfrom preprocessing function started
+[2023-10-06 19:26:17,526]root - INFO - -----reading test data started-----
+[2023-10-06 19:26:17,557]root - INFO - ------reading train data completed-----
+[2023-10-06 19:26:17,557]root - INFO - dropping target column from dataframe
+[2023-10-06 19:26:17,557]root - INFO - columns names after dropping target column : Index(['cap-shape', 'cap-color', 'cap-surface', 'bruises', 'odor',
+       'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color',
+       'stalk-shape', 'stalk-root', 'stalk-surface-above-ring',
+       'stalk-surface-below-ring', 'stalk-color-above-ring',
+       'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number',
+       'ring-type', 'spore-print-color', 'population', 'habitat'],
+      dtype='object')
+[2023-10-06 19:26:17,557]root - INFO - -----preprocessing on test data started-----
+[2023-10-06 19:26:17,635]root - INFO - -----preprocessing on test data completed-----
+[2023-10-06 19:26:17,635]root - INFO - one hot encoding on target data
+[2023-10-06 19:26:17,635]root - INFO - combining input and output dataframes
+[2023-10-06 19:26:17,635]root - INFO - save transformed train test data function started
+[2023-10-06 19:26:17,635]root - INFO - saving transformed train file in : D:\projects\mushroom_classification\mashroom\artifact\data_transform\2023-10-06-19-26-06\train
+[2023-10-06 19:26:17,840]root - INFO - saving transformed train file succesfull
+[2023-10-06 19:26:17,840]root - INFO - saving transformed test file in : D:\projects\mushroom_classification\mashroom\artifact\data_transform\2023-10-06-19-26-06\test
+[2023-10-06 19:26:18,049]root - INFO - saving transformed test file succesfull
+[2023-10-06 19:26:18,052]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-10-06 19:26:18,052]root - INFO - get model trainer function started
+[2023-10-06 19:26:18,053]root - INFO - mode trainer config : ModelTrainerConfig(trained_model_file_path='D:\\projects\\mushroom_classification\\model_trainer\\2023-10-06-19-26-06\\model.pkl', base_accuracy=0.9, model_config_file_path='D:\\projects\\mushroom_classification\\config\\model.yaml')
+[2023-10-06 19:26:18,053]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Model Trainer log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+[2023-10-06 19:26:18,053]root - INFO - intiate model trainer function started
+[2023-10-06 19:26:18,317]root - INFO - get best model function started
+[2023-10-06 19:26:18,318]root - INFO - get intlized model list function started
+[2023-10-06 19:26:18,364]root - INFO - intlized model list : [InitlizedModelDetails(model_serial_number='module_0', model=LogisticRegression(), params_grid_search={'penalty': ['l2']}, model_name='sklearn.linear_model.LogisticRegression')]
+[2023-10-06 19:26:18,365]root - INFO - Final model list is:[InitlizedModelDetails(model_serial_number='module_0', model=LogisticRegression(), params_grid_search={'penalty': ['l2']}, model_name='sklearn.linear_model.LogisticRegression')]
+[2023-10-06 19:26:18,365]root - INFO - initite best parameter for models function started
+[2023-10-06 19:26:18,366]root - INFO - finding best model for : InitlizedModelDetails(model_serial_number='module_0', model=LogisticRegression(), params_grid_search={'penalty': ['l2']}, model_name='sklearn.linear_model.LogisticRegression')
+[2023-10-06 19:26:18,366]root - INFO - finding best parameters for each models
+[2023-10-06 19:26:19,554]root - INFO - best model is : GridSearchedBestModel(model_serial_number='module_0', model=LogisticRegression(), best_model=LogisticRegression(), best_parameters={'penalty': 'l2'}, best_scores=0.9995382246698643)
+[2023-10-06 19:26:19,555]root - INFO - Best individual models with paramater is :[GridSearchedBestModel(model_serial_number='module_0', model=LogisticRegression(), best_model=LogisticRegression(), best_parameters={'penalty': 'l2'}, best_scores=0.9995382246698643)]
+[2023-10-06 19:26:19,555]root - INFO - get best model from grid searched best model
+[2023-10-06 19:26:19,556]root - INFO - best model on trained data is : LogisticRegression()
+[2023-10-06 19:26:19,564]root - INFO - get evulated classification model function started
+[2023-10-06 19:26:19,565]root - INFO - model list : [LogisticRegression()]
+[2023-10-06 19:26:19,565]root - INFO - -----------------for model : LogisticRegression()----------------------
+[2023-10-06 19:26:19,569]root - INFO - train accuracy : 1.0
+[2023-10-06 19:26:19,569]root - INFO - test accuracy : 1.0
+[2023-10-06 19:26:19,569]root - INFO - model accuracy : 1.0
+[2023-10-06 19:26:19,569]root - INFO - diff in train and test accuracy is : 0.0
+[2023-10-06 19:26:19,585]root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Model trainer log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
