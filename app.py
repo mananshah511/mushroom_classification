@@ -3,6 +3,7 @@ import os,sys
 from mashroom.logger import logging
 from mashroom.exception import MashroomException
 from flask_cors import CORS,cross_origin
+from mashroom.pipeline.pipeline import Pipeline
 
 
 app = Flask(__name__)
@@ -25,7 +26,12 @@ def predict():
 @app.route('/train',methods=['POST'])
 @cross_origin()
 def train():
-    pass
+    try:
+        pipeline = Pipeline()
+        pipeline.run_pipeline()
+        return render_template('index.html',prediction_text = "Model training completed")
+    except Exception as e:
+        raise MashroomException(sys,e) from e
 
 
 if __name__ == "__main__":

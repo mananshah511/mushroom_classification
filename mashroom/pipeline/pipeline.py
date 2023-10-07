@@ -82,5 +82,7 @@ class Pipeline:
                                                                   data_validation_artifact=data_validation_artifact,
                                                                   model_trainer_artifact=model_trainer_artifact)
             model_pusher_artifact = self.start_model_pusher(model_evulation_artifact=model_evulation_artifact)
+
+            
         except Exception as e:
             raise MashroomException(sys,e) from e

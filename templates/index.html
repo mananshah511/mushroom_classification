@@ -302,9 +302,16 @@
             </div>
         </form>
     </div>
-
-    
-
+    <div class="form-container">
+        <h2>Mushroom Model Training</h2>
+        <form id="mushroom-train" action="{{ url_for('train')}}" method="post">
+            <div class="form-group">
+                <input type="submit" value="Train">
+            </div>
+        </form>
+        <div class="form-container"><b>
+        {{prediction_text}}</b>
+        </div>
     
 </body>
 
