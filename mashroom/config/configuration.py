@@ -105,7 +105,7 @@ class Configuration:
 
             model_trainer_config = self.config_info[MODEL_TRAINER_CONFIG_KEY]
 
-            model_trainer_artifact_dir = os.path.join(ROOT_DIR,MODEL_TRAINER_DIR,self.current_time_stamp)
+            model_trainer_artifact_dir = os.path.join(artifact_dir,MODEL_TRAINER_DIR,self.current_time_stamp)
 
             moodel_config_dir = os.path.join(ROOT_DIR,model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_DIR_KEY],
                                              model_trainer_config[MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY])
