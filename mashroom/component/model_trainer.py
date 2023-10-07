@@ -27,20 +27,36 @@ class ModelTrainer:
             transform_train_file_dir = self.data_transform_artifact.transform_train_dir
             transform_test_file_dir = self.data_transform_artifact.transform_test_dir
 
+            logging.info(f"transform train file is avaiable at : {transform_train_file_dir}")
+            logging.info(f"transform test file is avaiable at : {transform_test_file_dir}")
+
             transform_train_file = os.listdir(transform_train_file_dir)[0]
             transform_test_file = os.listdir(transform_test_file_dir)[0]
 
+            logging.info(f"train file name is : {transform_train_file}")
+            logging.info(f"test file name is : {transform_train_file}")
+
+            logging.info(f"------reading train data started-------")
             train_df = pd.read_csv(os.path.join(transform_train_file_dir,transform_train_file))
+            logging.info(f"------reading train data completed------")
+
+            logging.info(f"------reading test data started-------")
             test_df = pd.read_csv(os.path.join(transform_test_file_dir,transform_test_file))
+            logging.info(f"------reading test data completed------")
+            
 
             model_trainer_artifact = None
+            logging.info(f"splitting data int input and output feature")
             X_train,y_train,X_test,y_test = train_df.iloc[:,:-1],train_df.iloc[:,-1],test_df.iloc[:,:-1],test_df.iloc[:,-1]
 
+            logging.info(f"reading model config file from {self.model_trainer_config.model_config_file_path}")
             model_config_file_path = self.model_trainer_config.model_config_file_path
 
+            logging.info(f"making object of model factory class")    
             model_factory = Modelfactory(config_path=model_config_file_path)
 
             base_accuracy = self.model_trainer_config.base_accuracy
+            logging.info(f"base accuracy is : {base_accuracy}")
 
             best_model = model_factory.get_best_model(X=np.array(X_train),y=np.array(y_train),base_accuracy=base_accuracy)
 
@@ -57,8 +73,22 @@ class ModelTrainer:
                                                                                base_accuracy=base_accuracy,
                                                                                model_list=model_list)
             
+            model_object = metric_info.model_object
+            logging.info(f"----------best model after train and test evulation : {model_object} accuracy : {metric_info.model_accuracy}-----------")
+
+            model_path = self.model_trainer_config.trained_model_file_path
+            model_name = os.path.basename(model_path)
+            logging.info(f"model name is : {model_name}")
+            model_dir = os.path.dirname(model_path)
+            os.makedirs(model_dir,exist_ok=True)
+
+            with open(model_path,'wb') as obj_file:
+                dill.dump(model_object,obj_file)
+            logging.info(f"model saved successfully")
+
+            
             model_trainer_artifact = ModelTrainerArtifact(is_trained=True,
-                                                          message='yes',
+                                                          message='Model trained successfully',
                                                           trained_model_path=self.model_trainer_config.trained_model_file_path,
                                                           train_accuracy=metric_info.train_accuracy,
                                                           test_accuracy=metric_info.test_accuracy,

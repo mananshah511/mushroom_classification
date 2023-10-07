@@ -210,6 +210,7 @@ class Modelfactory:
                 if base_accuracy < grid_searched_model.best_scores:
                     base_accuracy = grid_searched_model.best_scores
                     best_model = grid_searched_model.best_model
+                    logging.info(f"best model here : {best_model}")
 
             if not best_model:
                 raise Exception("None model has base accuracy")
