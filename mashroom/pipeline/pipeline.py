@@ -2,11 +2,12 @@ import os,sys
 from mashroom.exception import MashroomException
 from mashroom.logger import logging
 from mashroom.config.configuration import Configuration
-from mashroom.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact,DataTransformArtifact,ModelTrainerArtifact
+from mashroom.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact,DataTransformArtifact,ModelTrainerArtifact,ModelEvulationArtifact
 from mashroom.component.data_ingestion import DataIngestion
 from mashroom.component.data_validation import DataValidation
 from mashroom.component.data_transform import DataTransform
 from mashroom.component.model_trainer import ModelTrainer
+from mashroom.component.model_evulation import ModelEvulation
 
 class Pipeline:
 
@@ -41,11 +42,23 @@ class Pipeline:
         except Exception as e:
             raise MashroomException(sys,e) from e
         
-    def start_model_trainer(self,data_transform_artifact:DataTransformArtifact):
+    def start_model_trainer(self,data_transform_artifact:DataTransformArtifact)->ModelTrainerArtifact:
         try:
             model_trainer = ModelTrainer(data_transform_artifact=data_transform_artifact,
                                          model_trainer_config=self.cofig.get_model_trainer_config())
             return model_trainer.intitate_model_trainer()
+        except Exception as e:
+            raise MashroomException(sys,e) from e
+        
+    def start_model_evulation(self,data_transform_artifact:DataTransformArtifact,
+                              data_validation_artifact:DataValidationArtifact,
+                              model_trainer_artifact:ModelTrainerArtifact)->ModelEvulationArtifact:
+        try:
+            model_evulation = ModelEvulation(data_transform_artifact=data_transform_artifact,
+                                             model_trainer_artifact=model_trainer_artifact,
+                                             data_validation_artifact=data_validation_artifact,
+                                             model_evulation_config=self.cofig.get_model_evualtion_config())
+            return model_evulation.intiate_model_evulation()
         except Exception as e:
             raise MashroomException(sys,e) from e
         
@@ -56,5 +69,8 @@ class Pipeline:
             data_transform_artifact = self.start_data_transform(data_ingestion_artifact=data_ingestion_artifact,
                                         data_validation_artifact=data_validation_artifact)
             model_trainer_artifact = self.start_model_trainer(data_transform_artifact=data_transform_artifact)
+            model_evulation_artifact = self.start_model_evulation(data_transform_artifact=data_transform_artifact,
+                                                                  data_validation_artifact=data_validation_artifact,
+                                                                  model_trainer_artifact=model_trainer_artifact)
         except Exception as e:
             raise MashroomException(sys,e) from e

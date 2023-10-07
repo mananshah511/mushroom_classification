@@ -31,7 +31,7 @@ class DataValidation:
             train_df = pd.read_csv(train_file_path)
             logging.info(f"train file read successfull")
 
-            logging.info(f"rading test data from : {test_file_path}")
+            logging.info(f"reading test data from : {test_file_path}")
             test_df = pd.read_csv(test_file_path)
             logging.info(f"test file read successfull")
 
