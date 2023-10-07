@@ -1,0 +1,6 @@
+[2023-10-07 14:34:50,078]root - INFO - get training pipeline config function started
+[2023-10-07 14:34:50,078]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-07 14:34:50,078]root - INFO - get training pipeline config function started
+[2023-10-07 14:34:50,078]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-07 14:34:50,094]root - INFO - get model pusher config function started
+[2023-10-07 14:34:50,095]root - INFO - model pusher config : ModelPusherConfig(export_dir_path='D:\\projects\\mushroom_classification\\mashroom\\artifact\\model_pusher\\saved_models')

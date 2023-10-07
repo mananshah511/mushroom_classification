@@ -79,12 +79,18 @@ MODEL_TRAINER_BASE_ACCURACY_KEY = "base_acuracy"
 MODEL_TRAINER_MODEL_CONFIG_DIR_KEY = "model_config_dir"
 MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY = "model_config_file_name"
 
-#model evulation relate variables
+#model evulation related variables
 
 MODEL_EVULATION_CONFIG_KEY = "model_evulation_config"
 MODEL_EVULATION_DIR = "model_evulation"
 MODEL_EVULATION_FILE_NAME_KEY = "model_evulation_file_name"
 
+
+#model pusher related variables
+
+MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
+MODEL_PUSHER_DIR = "model_pusher"
+MODEL_PUSHER_EXPORT_MODEL_DIR_KEY = "model_export_dir"
 
 
 
