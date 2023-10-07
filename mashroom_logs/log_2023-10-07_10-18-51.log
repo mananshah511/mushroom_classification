@@ -1,0 +1,6 @@
+[2023-10-07 10:19:04,553]root - INFO - get training pipeline config function started
+[2023-10-07 10:19:04,553]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-07 10:19:04,553]root - INFO - get training pipeline config function started
+[2023-10-07 10:19:04,553]root - INFO - training pipeline config : TrainingPipelineConfig(artifact_dir='D:\\projects\\mushroom_classification\\mashroom\\artifact')
+[2023-10-07 10:19:04,553]root - INFO - model evulation config function started
+[2023-10-07 10:19:04,553]root - INFO - model evulation config : ModelEvulationConfig(evulation_file_path='D:\\projects\\mushroom_classification\\mashroom\\artifact\\model_evulation\\model_evulation.yaml', time_stamp='2023-10-07-10-18-52')
