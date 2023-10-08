@@ -34,7 +34,6 @@ def predict():
 
         train_df = pd.read_csv(final_artifact.ingested_train_file_dir)
         train_df = train_df.iloc[:,:-1]
-        logging.info(f"{train_df.head(5)}")
         df = pd.DataFrame(np.array(data)).T
         df.columns = train_df.columns
         df = pd.concat([df,train_df])
@@ -52,7 +51,7 @@ def predict():
         df = (np.array(df.iloc[0])).reshape(1,-1)
         output = model_obj.predict(df)
       
-        if output[0] == True:
+        if output[0] == 1:
             return render_template('index.html',output_text = "Mashroom is poisonous")
         else:
             return render_template('index.html',output_text = "Mashroom is edible")

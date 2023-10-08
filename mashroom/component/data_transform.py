@@ -80,7 +80,7 @@ class DataTransform:
 
                               
                 logging.info(f"one hot encoding on target data")
-                target_df = pd.get_dummies(target_df.values,drop_first=True)
+                target_df = pd.get_dummies(target_df.values,drop_first=True,dtype='int64')
 
                 train_df = pd.concat([train_df,target_df],axis=1)
                 logging.info(f"combining input and output dataframes")
@@ -107,7 +107,7 @@ class DataTransform:
 
                 
                 logging.info(f"one hot encoding on target data")
-                target_df = pd.get_dummies(target_df.values,drop_first=True)
+                target_df = pd.get_dummies(target_df.values,drop_first=True,dtype='int64')
 
                 test_df = pd.concat([test_df,target_df],axis=1)
                 logging.info(f"combining input and output dataframes")
