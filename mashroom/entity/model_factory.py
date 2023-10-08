@@ -7,6 +7,7 @@ import numpy as np
 from collections import namedtuple
 from sklearn.metrics import accuracy_score
 import importlib
+from typing import List
 
 
 
@@ -121,7 +122,7 @@ class Modelfactory:
             raise MashroomException(sys,e) from e
         
 
-    def get_intlized_model_list(self)->list[InitlizedModelDetails]:
+    def get_intlized_model_list(self)->List[InitlizedModelDetails]:
         try:
             logging.info(f"get intlized model list function started")
             intlized_model_list = []
@@ -153,8 +154,8 @@ class Modelfactory:
         except Exception as e:
             raise MashroomException(sys,e) from e
         
-    def initite_best_parameter_search_for_initlized_models(self,intlized_model_list:list[InitlizedModelDetails],
-                                                           input_feature,output_feature)->list[GridSearchedBestModel]:
+    def initite_best_parameter_search_for_initlized_models(self,intlized_model_list:List[InitlizedModelDetails],
+                                                           input_feature,output_feature)->List[GridSearchedBestModel]:
         try:
             logging.info(f"initite best parameter for models function started")
             self.grid_searched_best_model_list = []
@@ -200,7 +201,7 @@ class Modelfactory:
             raise MashroomException(sys,e) from e
         
     @staticmethod
-    def get_best_model_from_grid_serached_best_model_list(grid_searched_best_model_list:list[GridSearchedBestModel],
+    def get_best_model_from_grid_serached_best_model_list(grid_searched_best_model_list:List[GridSearchedBestModel],
                                                           base_accuracy:float=0.6):
         try:
             logging.info(f"get best model from grid searched best model")
