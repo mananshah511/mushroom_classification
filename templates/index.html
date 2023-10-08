@@ -124,9 +124,7 @@
                 <label for="gill-attachment">Gill Attachment:</label>
                 <select id="gill-attachment" name="gill-attachment">
                     <option value="a">Attached</option>
-                    <option value="d">Descending</option>
                     <option value="f">Free</option>
-                    <option value="n">Notched</option>
                 </select>
             </div>
             <div class="form-group">
@@ -134,7 +132,6 @@
                 <select id="gill-spacing" name="gill-spacing">
                     <option value="c">Close</option>
                     <option value="w">Crowded</option>
-                    <option value="d">Distant</option>
                 </select>
             </div>
             <div class="form-group">
@@ -173,9 +170,7 @@
                 <select id="stalk-root" name="stalk-root">
                     <option value="b">Bulbous</option>
                     <option value="c">Club</option>
-                    <option value="u">Cup</option>
                     <option value="e">Equal</option>
-                    <option value="z">Rhizomorphs</option>
                     <option value="r">Rooted</option>
                 </select>
             </div>
@@ -229,7 +224,6 @@
                 <label for="veil-type">Veil Type:</label>
                 <select id="veil-type" name="veil-type">
                     <option value="p">Partial</option>
-                    <option value="u">Universal</option>
                 </select>
             </div>
             <div class="form-group">
@@ -252,10 +246,11 @@
             <div class="form-group">
                 <label for="ring-type">Ring Type:</label>
                 <select id="ring-type" name="ring-type">
-                    <option value="c">Cobwebby</option>
                     <option value="e">Evanescent</option>
                     <option value="f">Flaring</option>
                     <option value="l">Large</option>
+                    <option value="p">Pendant</option>
+                    <option value="n">None</option>
                 </select>
             </div>
             <div class="form-group">
@@ -301,6 +296,9 @@
                 <input type="submit" value="Predict">
             </div>
         </form>
+        <div class="form-container"><b>
+            {{output_text}}</b>
+            </div>
     </div>
     <div class="form-container">
         <h2>Mushroom Model Training</h2>

@@ -2,13 +2,14 @@ import os,sys
 from mashroom.exception import MashroomException
 from mashroom.logger import logging
 from mashroom.config.configuration import Configuration
-from mashroom.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact,DataTransformArtifact,ModelTrainerArtifact,ModelEvulationArtifact,ModelPusherArtifact
+from mashroom.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact,DataTransformArtifact,ModelTrainerArtifact,ModelEvulationArtifact,ModelPusherArtifact,FinalArtifact
 from mashroom.component.data_ingestion import DataIngestion
 from mashroom.component.data_validation import DataValidation
 from mashroom.component.data_transform import DataTransform
 from mashroom.component.model_trainer import ModelTrainer
 from mashroom.component.model_evulation import ModelEvulation
 from mashroom.component.model_pusher import ModelPusher
+import json
 
 class Pipeline:
 
@@ -83,6 +84,12 @@ class Pipeline:
                                                                   model_trainer_artifact=model_trainer_artifact)
             model_pusher_artifact = self.start_model_pusher(model_evulation_artifact=model_evulation_artifact)
 
+            final_artifact = FinalArtifact(ingested_train_file_dir=data_ingestion_artifact.train_file_path,
+                                           preproceesed_model_dir=data_transform_artifact.preprocessed_dir,
+                                           trained_model_dir=model_pusher_artifact.export_dir_path)
             
+            with open('data.json', 'w') as json_obj:
+                json.dump(final_artifact._asdict(), json_obj)
+  
         except Exception as e:
             raise MashroomException(sys,e) from e
